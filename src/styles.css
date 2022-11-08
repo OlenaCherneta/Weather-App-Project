@@ -1,0 +1,154 @@
+body {
+  margin: 10 auto;
+  padding-top: 20px;
+  text-align: center;
+  
+  
+}
+
+h1, h2 {
+    position: relative;  
+   
+    }
+ 
+h2 {
+    padding: 8px 15px;
+    
+    
+}
+
+.content {
+  display: block;
+  margin: 0 auto;
+  border: solid grey;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  background: #E4F9F5; 
+}
+
+.city-header {
+    font-family: 'Silkscreen', cursive;
+    font-family: 'Source Serif Pro', serif;
+    font-size: auto;
+    padding-top: 15px;
+}
+
+.weather-now-header {
+    text-align: center;
+    padding: 15px;
+}
+
+.weather-now {
+    text-align: center;
+    font-size: larger;
+    position: relative;
+    top: -15px;
+    
+}
+
+.degrees{
+    font-size:20px;    
+    text-decoration: none;
+}
+ 
+
+.weather-now-details {
+    font-style: italic;
+    font-size: larger;
+}
+
+
+
+.geolocation-button {
+    margin: 20px;
+    box-shadow: 10px 5px 5px darkgray;
+    width: 85%;
+    position: relative;  
+    right: 20px;
+
+}
+
+.geolocation-button-text {
+    color: aliceblue;
+    font-family: 'Silkscreen', cursive;
+    font-family: 'Source Serif Pro', serif;
+}
+
+.geolocation-icon {
+    color: aliceblue;
+}
+
+
+.search-bar{
+    padding: 0px 20px 20px 20px;  
+
+}
+
+
+.search-button {
+   
+    border: none;
+    border-radius: 8px;
+    background-color: #00C385;    
+       width: 100%;
+    position: relative;
+    top: -1px;
+    text-align: center;
+    transition: 150ms all ease-in-out;
+    box-shadow: 10px 5px 5px darkgray;
+    height: 40px;
+   
+    
+}
+
+.search-button:hover {
+    background-color: #438365;
+    color: white;
+
+}
+
+.search-button-text {
+    color: white;
+    font-family: 'Silkscreen', cursive;
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 900;
+    text-align: center;
+    
+}
+
+.cities-search {
+    padding-left: 5px;
+}
+
+.forcast {
+    padding: 10px 20px;
+    padding-bottom: 20px;
+    text-align: center;       
+    
+}
+
+
+
+
+.contact-me {
+            display: block;
+            margin: 0 auto;
+            text-align: center;                  
+            font-size: smaller;
+            padding-bottom: 10px;              
+            font-family: 'Silkscreen', cursive;
+            font-family: 'Source Serif Pro', serif;
+
+               
+        }
+
+        .contact-text {
+            margin-top: 20px;
+            color: #00C385;        
+
+        }
+        .contact-link {
+            color: black;
+        }
+        
