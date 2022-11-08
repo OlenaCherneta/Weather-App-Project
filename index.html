@@ -12,168 +12,182 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Source+Serif+Pro&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/546532952b.js" crossorigin="anonymous"></script>  
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Source+Serif+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/546532952b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
 
   <body>
     <div class="container">
-       <div class="content">
+      <div class="content">
         <div class="row align-items-start">
           <div class="col-4">
-            <h2 class="weather-now-header">☀️
-              <br>
+            <h2 class="weather-now-header">
+              ☀️
+              <br />
               <span id="temperature" class="celsius">+14</span>
-                <a href="#" class="degrees" id="cTemperature">°C</a>
-                  |                         
-                <a href="#" class="degrees" id=fTemperature>°F</a>
+              <a href="#" class="degrees" id="cTemperature">°C</a>
+              |
+              <a href="#" class="degrees" id="fTemperature">°F</a>
             </h2>
             <p class="weather-now">Clear</p>
           </div>
           <div class="col-4">
             <h1 class="city-header" id="currentCity">Kharkiv</h1>
-            <div class="weather-now-details" >
-              <span id="currentDay">Friday</span>               
+            <div class="weather-now-details">
+              <span id="currentDay">Friday</span>
               <span id="currentTime">18:13</span>
             </div>
-            <div class="weather-now-details">Humidity: 
-              <span id="humidity">
-              51
-              </span>            
-              %</div>
-            <div class="weather-now-details">Wind:
-              <span id="windSpeed">
-                2
-              </span>
-                m/s</div>
+            <div class="weather-now-details">
+              Humidity:
+              <span id="humidity"> 51 </span>
+              %
+            </div>
+            <div class="weather-now-details">
+              Wind:
+              <span id="windSpeed"> 2 </span>
+              m/s
+            </div>
           </div>
           <div class="col-4">
-            <button type="button" 
-            class="btn btn-info geolocation-button"
-            id="geolocationButton">
+            <button
+              type="button"
+              class="btn btn-info geolocation-button"
+              id="geolocationButton"
+            >
               <span class="geolocation-button-text">
-              <i class="fa-solid fa-location-dot geolocation-icon"></i>   
-              Click here to find your current location
+                <i class="fa-solid fa-location-dot geolocation-icon"></i>
+                Click here to find your current location
               </span>
-              
-            </button>          
+            </button>
+          </div>
+        </div>
 
-          </div> 
-        </div>      
-             
-        
-       <div class="row search-bar">
-        <div class="col-8">
-          <form id="searchForm">
-           <input type="text" placeholder="Enter a city" 
-           class="form-control" id="userCity">
-           </form>
+        <div class="row search-bar">
+          <div class="col-8">
+            <form id="searchForm">
+              <input
+                type="text"
+                placeholder="Enter a city"
+                class="form-control"
+                id="userCity"
+              />
+            </form>
             <div class="row align-items-start cities-search">
               <div class="col-2">
                 <a href="">
-                  <span>
-                    Paris
-                  </span>                  
-                </a>                
-              </div>
-              <div class="col-2">
-                <a href="">
-                  <span>
-                    Kyiv
-                  </span>                  
-                </a>                
-              </div>
-              <div class="col-2">
-                <a href="">
-                  <span>
-                    Tokio
-                  </span>                  
-                </a>                
-              </div>
-              <div class="col-2">
-                <a href="">
-                  <span>
-                    London
-                  </span>                  
+                  <span> Paris </span>
                 </a>
-              </div>  
-            </div> 
-           
-           <div>   </div>
-        </div>
-        <div class="col-4">
-          <input type="submit" value="Search" 
-          class="search-button search-button-text"  id="searchButton">
-                           
+              </div>
+              <div class="col-2">
+                <a href="">
+                  <span> Kyiv </span>
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="">
+                  <span> Tokio </span>
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="">
+                  <span> London </span>
+                </a>
+              </div>
+            </div>
+
+            <div></div>
+          </div>
+          <div class="col-4">
+            <input
+              type="submit"
+              value="Search"
+              class="search-button search-button-text"
+              id="searchButton"
+            />
+          </div>
         </div>
 
-       </div>          
-      
-      
-      <div class="row align-items-start forcast">
-      <div class="col">
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Sat</h5>
+        <div class="row align-items-start forcast">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Sat</h5>
                 <p class="card-text">🌧️</p>
-              <p class="card-text">+10°C</p>
+                <p class="card-text">+10°C</p>
+              </div>
             </div>
-        </div>
-         
-      </div>
-      <div class="col">
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Sun</h5>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Sun</h5>
                 <p class="card-text">⛅</p>
-              <p class="card-text">+5°C</p>
+                <p class="card-text">+5°C</p>
+              </div>
             </div>
-        </div>           
-      </div>
-      <div class="col">
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Mon</h5>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Mon</h5>
                 <p class="card-text">🌫️</p>
-              <p class="card-text">0°C</p>
+                <p class="card-text">0°C</p>
+              </div>
             </div>
-        </div>          
-      </div>
-      <div class="col">
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Tue</h5>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Tue</h5>
                 <p class="card-text">🌨️</p>
-              <p class="card-text">-3°C</p>
+                <p class="card-text">-3°C</p>
+              </div>
             </div>
-        </div>          
-      </div>
-      <div class="col">
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Wed</h5>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Wed</h5>
                 <p class="card-text">☁️</p>
-              <p class="card-text">+2°C</p>
+                <p class="card-text">+2°C</p>
+              </div>
             </div>
+          </div>
         </div>
+        <p class="contact-me">
+          👩‍💻
+          <a href="https://github.com/OlenaCherneta/Weather-App-Project"
+            >Coded by</a
+          >
+          Olena Cherneta
 
-         
-                  
+          <br />
+          <span class="contact-text">Email: </span>
+          <a
+            class="contact-link"
+            href="mailto: taliara.work@gmail.com"
+            target="_blank"
+            >taliara.work@gmail.com</a
+          >
+
+          <span class="contact-text"> Instagram: </span>
+          <a
+            class="contact-link"
+            href="https://www.instagram.com/olenacherneta"
+            target="_blank"
+            >olenacherneta</a
+          >
+        </p>
       </div>
-      </div>    
-         <p class="contact-me"> 👩‍💻Coded by Olena Cherneta
-    
-    <br>
-        <span class="contact-text">Email: </span>
-        <a class="contact-link" href="mailto: taliara.work@gmail.com" target = "_blank">taliara.work@gmail.com</a>
-    
-        <span class="contact-text"> Instagram: </span>
-         <a class="contact-link" href="https://www.instagram.com/olenacherneta" target = "_blank">olenacherneta</a>     
-      </div>
-      
     </div>
     <script src="src/index.js"></script>
   </body>
