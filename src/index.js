@@ -51,8 +51,7 @@ function showTemperature(responce) {
   let iconElement = document.querySelector("#weatherIcon");
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
-  )
+    `https://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`)
 
 }
 
