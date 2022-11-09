@@ -54,6 +54,15 @@ h2 {
 }
  
 
+.active {
+    color: black;
+    cursor: default;
+}
+.active:hover{
+    text-decoration: none;
+    color: black;
+}
+
 .weather-now-details {
     font-style: italic;
     font-size: larger;

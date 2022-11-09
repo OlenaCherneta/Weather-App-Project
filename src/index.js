@@ -32,10 +32,11 @@ function currentDayAndTime() {
 
 //Function shows temperature, wind speeed and humidity in current city
 function showTemperature(responce) {
-  let temperature = responce.data.main.temp;
-    temperature = Math.ceil(temperature);
+  celsiusTemperature = responce.data.main.temp;
+  celsiusTemperature = Math.ceil(celsiusTemperature);
+    
   let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = `${temperature}`;
+  currentTemperature.innerHTML = `${celsiusTemperature}`;
   let cityName = responce.data.name;
   let currentCityName = document.querySelector("#currentCity");
   currentCityName.innerHTML = cityName;
@@ -87,25 +88,27 @@ function searchCity() {
 function toFarenheitDegrees(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = "+58";
+  let temperatureFarenheit = (celsiusTemperature * 9) / 5 + 32;
+  temperatureFarenheit = Math.ceil(temperatureFarenheit);
+  temperatureElement.innerHTML = temperatureFarenheit;
+  clickOnCelsius.classList.remove("active");
+  clickOnFarenheit.classList.add("active");
+  
 }
 
 //Function converts current temperature to Celsius Degrees and displays it
 function toCelsiusDegrees(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = "+14";
+  temperatureElement.innerHTML = celsiusTemperature;
+  clickOnFarenheit.classList.remove("active");
+  clickOnCelsius.classList.add("active");
+  
 }
 
 //Function converts current temperature to Celsius or Farenheit Degrees
 //after clicking on link and displays that temperature
-function degreesChange() {
-  let currentTemperature = document.querySelector("#temperature");
-  let clickOnFarenheit = document.querySelector("#fTemperature");
-  clickOnFarenheit.addEventListener("click", toFarenheitDegrees);
-  let clickOnCelsius = document.querySelector("#cTemperature");
-  clickOnCelsius.addEventListener("click", toCelsiusDegrees);
-}
+
 
 
 //Function shows weather in Kharkiv  (city by default)
@@ -138,13 +141,18 @@ let locationButton = document.querySelector("#geolocationButton");
 locationButton.addEventListener("click", userLocation);
 }
 
+let celsiusTemperature = null;
 
+let currentTemperature = document.querySelector("#temperature");
+let clickOnFarenheit = document.querySelector("#fTemperature");
+clickOnFarenheit.addEventListener("click", toFarenheitDegrees);
+let clickOnCelsius = document.querySelector("#cTemperature");
+clickOnCelsius.addEventListener("click", toCelsiusDegrees);
 
 //Method setInterval shows current time in real time without reloading the page
 setInterval(currentDayAndTime);
 //Calling function for searching form
 searchCity();
-degreesChange();
 defoultCityWeather();
 geolocation();
 
