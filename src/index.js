@@ -1,3 +1,38 @@
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = "";
+  let days = ["Sun", "Mon", "Thu", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">${day}</h5>
+                <img class="card-icon" src="https://openweathermap.org/img/wn/50d@2x.png" alt="">
+                
+                <p class="card-text">
+                  <span class="maximum-temperature">
+                    10
+                  </span>
+                   <br>
+                  <span class="minimum-temperature">
+                     -11
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+  `;
+  });
+
+  
+  forecastElement.innerHTML = forecastHTML;
+}
+
+
 function currentDayAndTime() {
   //Function to show current day and time
   let now = new Date();
@@ -52,7 +87,8 @@ function showTemperature(responce) {
   let iconElement = document.querySelector("#weatherIcon");
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`)
+    `https://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`);
+    
 
 }
 
@@ -153,6 +189,7 @@ clickOnCelsius.addEventListener("click", toCelsiusDegrees);
 setInterval(currentDayAndTime);
 //Calling function for searching form
 searchCity();
+displayForecast();
 defoultCityWeather();
 geolocation();
 
