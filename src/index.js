@@ -221,6 +221,7 @@ geolocation();
  
 /*
 
+
 //Functions below change degrees to C or F using formulas
 
 function toFarenheitDegrees(event) {
