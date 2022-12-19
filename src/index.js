@@ -47,7 +47,7 @@ function displayForecast(response){
 }
 
 function getForecast (coordinates){
-  let apiKey = "91e4be9d3f0ce62462b88df7804804ae";
+  let apiKey = "f81614abe2395d5dfecd45b9298041de";
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 console.log(apiURL);
 axios.get(apiURL).then(displayForecast);
@@ -126,8 +126,8 @@ function userCity(event) {
     let city = document.querySelector("#currentCity");
     
     userCity.value = "";
-    let apiKey = "91e4be9d3f0ce62462b88df7804804ae";    
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityCheck}&units=metric&appid=${apiKey}`;
+    let apiKey = "f81614abe2395d5dfecd45b9298041de";    
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityCheck}&appid=${apiKey}&units=metric`;
     
     axios.get(apiUrl).then(showTemperature);
   }
@@ -170,10 +170,10 @@ function toCelsiusDegrees(event) {
 
 //Function shows weather in Kharkiv  (city by default)
 function defoultCityWeather() {
-  let apiKey = "91e4be9d3f0ce62462b88df7804804ae";
+  let apiKey = "f81614abe2395d5dfecd45b9298041de";
   let city = document.querySelector("#currentCity");
   city = city.innerText;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   
   axios.get(apiUrl).then(showTemperature);
 }
@@ -182,8 +182,8 @@ function defoultCityWeather() {
 function handlePosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = "91e4be9d3f0ce62462b88df7804804ae";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  let apiKey = "f81614abe2395d5dfecd45b9298041de";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 
